@@ -1,0 +1,42 @@
+html, body {
+  height: auto;
+  width: auto;
+  background-image: url(bg.png);
+  background-size: cover; /* Use cover for a better fit */
+  margin: 0;
+}
+
+#root {
+  height: auto;
+  width: auto;
+  display: flex; /* Ensure flexbox is applied */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.taskInput {
+  height: 40%;
+  width: 100%; /* Ensure both sides take 50% of the width */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.taskListPlace {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 5 equal-width columns */
+  gap: 1rem; /* Adjust gap between cards as needed */
+  overflow-y: auto; /* Allows vertical scrolling if content exceeds the height */
+}
+
+@media (max-width: 768px) {
+  .taskListPlace {
+    grid-template-columns: 1fr; /* Stacks cards in a single column on small screens */
+  }
+}
